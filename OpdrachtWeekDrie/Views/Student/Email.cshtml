@@ -1,0 +1,15 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@{
+    ViewData["Title"] = "Email van Student";
+}
+
+@using OpdrachtWeekDrie.Models
+@model List<Student>
+
+@{Layout = "_Layout";}
+<div> We hebben gecheckt of er een student was met het door jou ingevoerde studentnummer.</div>
+<div>@ViewData["Bericht"]</div>

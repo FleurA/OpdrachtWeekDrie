@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Jouw Naam";
+}
+
+@using OpdrachtWeekDrie.Models
+@model List<Student>
+
+@{Layout = "_Layout";}
+<div> We hebben bekeken hoe vaak jouw naam voorkomt.</div>
+@foreach (Student s in Model)
+{
+    <div> Student @s.Voornaam met studentnummer @s.studentNummer. </div>
+
+}
+<div>@ViewData["zoek"]</div>

@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "studenten";
+}
+
+@using OpdrachtWeekDrie.Models
+@model List<Student>
+
+@{Layout = "_Layout";}
+
+<div class="row">
+
+    @foreach (Student s in Model)
+    {
+        <div> Student @s.Voornaam met studentnummer @s.studentNummer heeft als email @s.email </div>
+
+    }
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <h2>  Check hoe vaak jouw naam voorkomt!</h2>
+
+        <form name="aantal" action="/student/aantal" method="get">
+            <div>Naam: <input name="Voornam" type="text" /></div>
+
+            <div><input type="submit" value="Aantal" /></div>
+        </form>
+    </div>
+    <div class="col-4">
+        <h2> Zoek de email van een student.</h2>
+
+        <form name="mailStudent" action="/student/Email" method="get">
+            <div>Studentnummer: <input name="studentnummer" type="text" /></div>
+
+            <div><input type="submit" value="Zoek email" /></div>
+        </form>
+    </div>
+    <div class="col-4">
+        <h2> Zoek studenten op basis van beginletter.</h2>
+
+        <form name="zoekStudenten" action="/student/zoekStudenten" method="get">
+            <div>Eerste letter: <input name="Letter" type="text" /></div>
+
+            <div><input type="submit" value="Zoek studenten" /></div>
+        </form>
+    </div>
+</div>
+
